@@ -16,12 +16,18 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 2. come genero le bombe? Con math.random; da 1 a 100;     ok
 3. come le inserisco nell'array? con push;     ok 
 4. bisogna però chiedergli di fare questa cosa del random finchè non inserisce 16 numeri nell'array; ok
+5.  Controllo di non inserire random uguali.
 */ 
 
 
 var bombs = [];
 while (bombs.length < 16) {
-    bombs.push(Math.floor(Math.random()* 100 - 1 + 1)+ 1);   /*-> creare una funzione */
+    var cpuRandom = Math.floor(Math.random()* 100 - 1 + 1)+ 1; /*-> creare una funzione */
+    
+    if(!bombs.includes(cpuRandom)) {
+        bombs.push(cpuRandom);
+    }
 }
 
 console.log(bombs);
+
