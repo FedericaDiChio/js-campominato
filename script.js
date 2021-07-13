@@ -20,8 +20,8 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 
 
 var bombs = [];
-while (bombs.length <= 16) {
+while (bombs.length < 16) {
     bombs.push(Math.floor(Math.random()* 100 - 1 + 1)+ 1);   /*-> creare una funzione */
 }
 
-console.table(bombs);
+console.log(bombs);
