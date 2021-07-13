@@ -19,12 +19,10 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 5.  Controllo di non inserire random uguali.
 */ 
 
-
 var bombs = [];
 while (bombs.length < 16) {
-    var cpuRandom = Math.floor(Math.random()* 100 - 1 + 1)+ 1; /*-> creare una funzione */
-    
-    if(!bombs.includes(cpuRandom)) {
+    var cpuRandom = Math.floor(Math.random() * 100 - 1 + 1) + 1; /*-> creare una funzione */
+    if (!bombs.includes(cpuRandom)) {
         bombs.push(cpuRandom);
     }
 }
