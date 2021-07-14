@@ -19,12 +19,23 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 5.  Controllo di non inserire random uguali.
 */ 
 
-var bombs = [];
-while (bombs.length < 16) {
-    var cpuRandom = Math.floor(Math.random() * 100 - 1 + 1) + 1; /*-> creare una funzione */
+
+
+const userNumber = [];  /* qui memorizziamo i numeri scelti dall'utente */
+let userChoice = " ";   /* qui chiediamo i suddetti numeri che passeranno poi per il controllo */
+const bombs = [];       /* qui memorizziamo le bombe */ 
+
+// Controlliamo che non ci siano due numeri uguali nelle bombe 
+while (bombs.length < 5) {
+    const cpuRandom = randomNumber (1,100) 
     if (!bombs.includes(cpuRandom)) {
         bombs.push(cpuRandom);
     }
+}
+
+// Funzione che permette di calcolare numeri random da 1 a 100 
+function randomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 console.log(bombs);
