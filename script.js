@@ -26,7 +26,7 @@ let userChoice = " ";   /* qui chiediamo i suddetti numeri che passeranno poi pe
 const bombs = [];       /* qui memorizziamo le bombe */ 
 
 // Controlliamo che non ci siano due numeri uguali nelle bombe 
-while (bombs.length < 5) {
+while (bombs.length < 16) {
     const cpuRandom = randomNumber (1,100) 
     if (!bombs.includes(cpuRandom)) {
         bombs.push(cpuRandom);
@@ -39,4 +39,6 @@ function randomNumber (min, max) {
 }
 
 console.log(bombs);
+
+
 
