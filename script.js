@@ -45,6 +45,23 @@ console.log(bombs);
 
 
 /*6. Dobbiamo chiedere un numero all'utente */
-userChoice = parseInt(prompt("Inserisci un numero fino a " +maxNumbers))
 // 7. Controlliamo che questo numero sia un numero, che vada dal min al max e che l'utente non lasci il campo vuoto 
 
+
+while (!isGameOver && userNumbers < userChance) { /*controlliamo che i numeri dell'utente siano tanti quanti i tentativi */
+    do {
+        userChoice = parseInt(prompt("Inserisci un numero fino a " +maxNumbers))
+    } while (!userChoice /*controlliamo no null ecc */ || !isNaN(userChoice) /*controlliamo che sia un numero*/ || userChoice < 1 || userChoice > maxNumbers /*controlliamo max e min*/) 
+
+} 
+
+/* ok */
+
+
+/* Controlliamo che il numero scelto dall'utente non sia nelle bombe*/
+
+if(bombs.includes(userChoice)) {
+    console.log("Hai perso") 
+} else {
+    
+}
