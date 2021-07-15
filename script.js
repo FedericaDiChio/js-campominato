@@ -19,26 +19,32 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 5.  Controllo di non inserire random uguali.
 */ 
 
+var bombs = [];                                         /* per memorizzare le bombe */ 
+var bombsNumbers = 6;                        /*(16)     /* lunghezza dell'array bombe */
+var maxNumbers = 10;                      /*(100)       /* tetto massimo numerico */
+var userChance = maxNumbers - bombsNumbers;             /* le chance totali dell'utente */ 
+var userNumbers = [];                                    /* per memorizzare i numeri scelti dall'utente */
+var userChoice;                                         /* per chiedere i numeri all'utente */
+var isGameOver = false;                                 /* per interrompere il ciclo*/
 
-
-const userNumber = [];  /* qui memorizziamo i numeri scelti dall'utente */
-let userChoice = " ";   /* qui chiediamo i suddetti numeri che passeranno poi per il controllo */
-const bombs = [];       /* qui memorizziamo le bombe */ 
 
 // Controlliamo che non ci siano due numeri uguali nelle bombe 
-while (bombs.length < 16) {
-    const cpuRandom = randomNumber (1,100) 
+while (bombs.length < bombsNumbers) {
+    var cpuRandom = randomNumber (1, maxNumbers) 
     if (!bombs.includes(cpuRandom)) {
         bombs.push(cpuRandom);
     }
 }
+// Includes va eseguito più volte, si potrebbe fare una funzione? 
 
 // Funzione che permette di calcolare numeri random da 1 a 100 
 function randomNumber (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 console.log(bombs);
 
 
+/*6. Dobbiamo chiedere un numero all'utente */
+userChoice = parseInt(prompt("Inserisci un numero fino a " +maxNumbers))
+// 7. Controlliamo che questo numero sia un numero, che vada dal min al max e che l'utente non lasci il campo vuoto 
 
